@@ -1,0 +1,63 @@
+@import 'App.scss';
+
+/* Desktop */
+.footer-container {
+    padding: 0 2em;
+    min-height: 4em;
+    background-color: #5b605d;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: left .75s;
+}
+.footer-item {
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    text-align: center;
+    font-size: .875em;
+    transition: ease all .75s;
+}
+.footer-icons {
+    cursor: pointer;
+    padding: 0 .375em;
+    width: 1.714em;
+    height: 1.714em;
+    transition: ease all .75s;
+}
+/* Tablet */
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .footer-container {
+        padding: 0 1.250em;
+        min-height: 5em;
+    }
+    .footer-item {
+        padding-bottom: 1em;
+    }
+}
+/* Mobile */
+@media screen and (max-width: $max-mobile) {
+    .footer-container {
+        padding: 0 .875em;
+        min-height: 12.688em;
+
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .footer-item {
+        padding: .438em 0;
+    }
+    .footer-item:first-child {
+        padding-top: 1.438em;
+    }
+    .footer-item:last-child {
+        padding-top: 1em;
+    }
+    .footer-icons {
+        cursor: pointer;
+        padding: 0 .375em;
+        width: 2.125em;
+        height: 2.125em;
+    }
+}
