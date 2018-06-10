@@ -1,6 +1,8 @@
 # quinnvissak.com
 My second attempt at a personal website.
 
+[![Build Status](https://travis-ci.org/qvissak/quinnvissak.com.svg?branch=master)](https://travis-ci.org/qvissak/quinnvissak.com)
+
 ## Technology Stack
 Don't worry, knowledge of php is not required for this project. It's just how the headless-CMS is set up, but it can be edited with absolutely no coding! Before working on this project, you should be familiar with the following protocols, projects and technologies:
 - [ESLint](https://eslint.org/)
