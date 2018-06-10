@@ -96,5 +96,9 @@ typings/
 !.vscode/extensions.json
 .history
 
+### Sass ###
+src/**/*.css
+.sass-cache/
+*.css.map
 
 # End of https://www.gitignore.io/api/node,macos,visualstudiocode
