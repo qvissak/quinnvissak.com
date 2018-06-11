@@ -1,0 +1,62 @@
+@import 'App.scss';
+
+/* Desktop */
+.header-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2em 5.938em;
+}
+.headeritem-container {
+    padding: 0 1em;
+    font-size: 1.063em;
+    cursor: pointer;
+}
+.headeritem-text {
+    text-decoration: initial;
+    color: initial;
+}
+.headeritem-dropdown-text {
+    padding: 0.5em 1em;
+}
+.headeritem-border {
+    border-top: 1px solid #DCDCDC;
+}
+.headeritem-icon {
+    padding-left: 0.375em;
+    width: 0.75em;
+    height: 0.75em;
+}
+.headeritem-dropdown {
+    padding: .25em 0 !important;
+    width: 10.938em !important;
+    font-size: 1.063em !important;
+    pointer-events: auto !important;
+    background-color: white !important;
+    border: 1px solid black !important;
+    opacity: 1 !important;
+    &:hover {
+        visibility: visible !important;
+    }
+}
+/* Tablet */
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .header-container {
+        padding: 2em 1.250em;
+    }
+    .headeritem-container {
+        padding: 0 .625em;
+        font-size: 1em;
+        cursor: pointer;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: $max-mobile) {
+    .header-container {
+        padding: 2em 0.75em;
+    }
+    .headeritem-container {
+        padding: 0 .5em;
+        font-size: 0.875em;
+    }
+}

@@ -6,9 +6,10 @@ import Education from './components/Education'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Keywords from './components/Keywords'
-import Recipes from './components/Recipes'
+import Food from './components/Food'
 import Activities from './components/Activities'
 import NotFound from './components/NotFound'
+import Header from './components/Header'
 import Footer from './components/Footer'
 
 import './App.css'
@@ -16,6 +17,7 @@ import './App.css'
 // Component that will hold body of landing page
 const Layout = ({ children }) =>
   <div>
+    <Header />
     <main>
       { children }
     </main>
@@ -31,7 +33,7 @@ const App = () =>
         <Route path='/experience' component={Experience} />
         <Route path='/projects' component={Projects} />
         <Route path='/keywords' component={Keywords} />
-        <Route path='/recipes' component={Recipes} />
+        <Route path='/food' component={Food} />
         <Route path='/activities' component={Activities} />
         <Route component={NotFound} />
       </Switch>
