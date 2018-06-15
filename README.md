@@ -46,6 +46,11 @@ Before trying to clone the repository, ensure you have a [public/private key pai
 git clone git@github.com:qvissak/quinnvissak.com.git
 ```
 
+### Set up environment variables
+```sh
+cp .env.example .env
+```
+
 ### Install Dependencies
 ```sh
 cd quinnvissak.com/

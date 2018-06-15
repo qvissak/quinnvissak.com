@@ -1,0 +1,95 @@
+@import 'App.scss';
+
+/* Desktop */
+/* index.js */
+.food-container {
+    min-height: calc(100vh - 9.90em);
+}
+.food-header-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.food-header-img {
+    width: 100%;
+    height: 20em;
+    object-fit: cover;
+    filter: brightness(95%);
+    transition: ease all .75s;
+}
+.food-header-title {
+    position: absolute;
+    bottom: 0;
+    left: 0.25em;
+    font-weight: bold;
+    font-size: 8em;
+    letter-spacing: .1em;
+    text-shadow: 5px 5px rgba(0,0,0,.1);
+    transition: ease font-size .75s;
+}
+.food-content-container {
+    display: grid;
+    grid-template-columns: 5.938em auto 5.938em;
+    padding-top: 0.25em;
+    padding-bottom: 5.938em;
+}
+.food-content-container-inner{
+    grid-column-start: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 1em;
+    justify-items: center;
+}
+/* Recipes.js */
+.foodcard-card {
+    border-radius: 4% !important;
+    &:hover {
+        transform: scale(1.02) !important;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        transition-duration: .5s !important;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .food-container {
+        min-height: calc(100vh - 10.8em);
+    }
+    .food-header-img {
+        height: 15em;
+        object-position: 25% 50%;
+    }
+    .food-header-title {
+        font-size: 6em;
+    }
+    .food-content-container {
+        grid-template-columns: 1.250em auto 1.250em;
+        padding-bottom: 1.250em;
+    }
+    .food-content-container-inner{
+        grid-template-columns: auto auto;
+        grid-gap: 1em;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: $max-mobile) {
+    .food-container {
+        min-height: calc(100vh - 18.2em);
+    }
+    .food-header-img {
+        height: 12em;
+        object-position: 10% 50%;
+    }
+    .food-header-title {
+        font-size: 5em;
+    }
+    .food-content-container {
+        grid-template-columns: 0.875em auto 0.875em;
+        padding-bottom: 0.875em;
+    }
+    .food-content-container-inner{
+        grid-template-columns: auto;
+        grid-gap: 0.875em;
+    }
+}

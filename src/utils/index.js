@@ -1,7 +1,6 @@
 import url from 'url'
-import qs from 'qs'
 
-export const endpoint = process.env.REACT_APP_DIRECTUS_ENDPOINT || '/'
+export const host = process.env.REACT_APP_DIRECTUS_HOST
 
 /**
  * Generic fetch to make api calls
@@ -26,9 +25,11 @@ export function apiFetchGeneric (protocol, hostname, pathname, query, ...args) {
  * @param {*} args - headers
  */
 export function apiFetch (pathname, query, ...args) {
-  const path = url.resolve(endpoint, pathname + '?' + qs.stringify(query))
+  const path = url.format({ pathname, query })
+
   return fetch(path, ...args)
     .then(response => response.json())
+    .catch((error) => { throw error })
 }
 
 export function apiImageUrlGeneric (obj, imageurl) {
@@ -36,5 +37,5 @@ export function apiImageUrlGeneric (obj, imageurl) {
 }
 
 export function apiImageUrl (imageurl) {
-  return url.resolve(endpoint, imageurl)
+  return 'http://' + host + imageurl
 }

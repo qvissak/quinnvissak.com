@@ -4,6 +4,12 @@ export const colors = {
 
 export const email = 'quinn.vissak@uconn.edu'
 
+export const apiUri = {
+  recipes: {
+    pathname: '/api/1.1/tables/recipes/rows'
+  }
+}
+
 export const navigation = [
   {
     name: 'home',
