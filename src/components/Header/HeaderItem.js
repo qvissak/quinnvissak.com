@@ -8,25 +8,22 @@ class HeaderItem extends React.Component {
   render () {
     const { item } = this.props
 
-    const display = item.name === 'about'
+    return item.name === 'about'
       ? <div className="headeritem-container">
+        <ReactTooltip className='headeritem-dropdown' delayHide={500} effect='solid'/>
         {/* data-tip uses dangerouslySetHTML and does not render JSX */}
-        <a data-html={true} data-tip={ReactDOMServer.renderToStaticMarkup(
+        <a id="ddp" data-html={true} className="headeritem-text" data-tip={ReactDOMServer.renderToStaticMarkup(
           item.link.map((nestedItem, i) =>
             <a className="headeritem-text" href={nestedItem.link}>
-              <div className={ i !== 0
-                ? 'headeritem-dropdown-text headeritem-border'
-                : 'headeritem-dropdown-text'}>{nestedItem.text}
+              <div className={`headeritem-dropdown-text ${i !== 0 ? 'headeritem-border' : ''}`}>
+                {nestedItem.text}
               </div>
             </a>
           ))}>{item.text}<img className="headeritem-icon" alt="dcaret" src="/icons/dcaret.svg" /></a>
-        <ReactTooltip className='headeritem-dropdown' delayHide={500} effect='solid'/>
       </div>
       : <div className="headeritem-container">
-        <a className="headeritem-text" href={item.link}>{item.text}</a>
+        <a className={item.text === '|' ? '' : 'headeritem-text'} href={item.link}>{item.text}</a>
       </div>
-
-    return display
   }
 }
 

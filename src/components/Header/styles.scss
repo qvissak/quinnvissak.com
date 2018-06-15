@@ -5,18 +5,29 @@
     display: flex;
     justify-content: flex-end;
     padding: 2em 5.938em;
+    transition: ease all .75s;
 }
 .headeritem-container {
-    padding: 0 1em;
+    margin: 0 1em;
     font-size: 1.063em;
-    cursor: pointer;
+    transition: ease all .75s;
 }
 .headeritem-text {
     text-decoration: initial;
     color: initial;
+    &:hover {
+        opacity: .5;
+        cursor: default;
+        &:not(#ddp) {
+            cursor: pointer;
+        }
+    }
 }
 .headeritem-dropdown-text {
     padding: 0.5em 1em;
+    &:hover {
+        color: rgba(0, 0, 0, 0.5);
+    }
 }
 .headeritem-border {
     border-top: 1px solid #DCDCDC;
@@ -32,21 +43,28 @@
     font-size: 1.063em !important;
     pointer-events: auto !important;
     background-color: white !important;
-    border: 1px solid black !important;
+    box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15),
+        0 5px 15px rgba(0,0,0,.1) !important;
     opacity: 1 !important;
+    &:after {
+        border-bottom-color: white !important;
+    }
     &:hover {
         visibility: visible !important;
     }
+    &:hover + #ddp {
+        opacity: .5;
+    }
 }
+
 /* Tablet */
 @media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
     .header-container {
         padding: 2em 1.250em;
     }
     .headeritem-container {
-        padding: 0 .625em;
+        margin: 0 .625em;
         font-size: 1em;
-        cursor: pointer;
     }
 }
 
@@ -56,7 +74,7 @@
         padding: 2em 0.75em;
     }
     .headeritem-container {
-        padding: 0 .5em;
+        margin: 0 .5em;
         font-size: 0.875em;
     }
 }
