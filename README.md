@@ -105,7 +105,7 @@ composer install
 ```
 
 ### Launch Project
-Navigate to quinnvissak.com:8080/login.php in your browser to see the CMS.
+Navigate to quinnvissak.test:8080/login.php in your browser to see the CMS.
 ```sh
 cd quinnvissak.com/
 npm start

@@ -28,13 +28,13 @@ const App = () =>
   <Layout>
     <Router>
       <Switch>
-        <Route exact path='/' component={Landing} />
-        <Route path='/education' component={Education} />
-        <Route path='/experience' component={Experience} />
-        <Route path='/projects' component={Projects} />
-        <Route path='/keywords' component={Keywords} />
-        <Route path='/food' component={Food} />
-        <Route path='/activities' component={Activities} />
+        <Route exact path='/quinnvissak.com/' component={Landing} />
+        <Route path='/quinnvissak.com/education' component={Education} />
+        <Route path='/quinnvissak.com/experience' component={Experience} />
+        <Route path='/quinnvissak.com/projects' component={Projects} />
+        <Route path='/quinnvissak.com/keywords' component={Keywords} />
+        <Route path='/quinnvissak.com/food' component={Food} />
+        <Route path='/quinnvissak.com/activities' component={Activities} />
         <Route component={NotFound} />
       </Switch>
     </Router>

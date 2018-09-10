@@ -13,7 +13,7 @@ export const apiUri = {
 export const navigation = [
   {
     name: 'home',
-    link: '/',
+    link: '/quinnvissak.com/',
     text: 'home'
   },
   {
@@ -21,17 +21,17 @@ export const navigation = [
     link: [
       {
         name: 'education',
-        link: '/education',
+        link: '/quinnvissak.com/education',
         text: 'education'
       },
       {
         name: 'experience',
-        link: '/experience',
+        link: '/quinnvissak.com/experience',
         text: 'experience'
       },
       {
         name: 'projects',
-        link: '/projects',
+        link: '/quinnvissak.com/projects',
         text: 'projects'
       }
     ],
@@ -39,17 +39,17 @@ export const navigation = [
   },
   {
     name: 'keywords',
-    link: '/keywords',
+    link: '/quinnvissak.com/keywords',
     text: 'keywords'
   },
   {
     name: 'food',
-    link: '/food',
+    link: '/quinnvissak.com/food',
     text: 'food'
   },
   {
     name: 'activities',
-    link: '/activities',
+    link: '/quinnvissak.com/activities',
     text: 'activities'
   },
   {
@@ -59,7 +59,8 @@ export const navigation = [
   },
   {
     name: 'login',
-    link: 'http://quinnvissak.test:8080/login',
+    // link: 'http://quinnvissak.test:8080/login',
+    link: '/',
     text: 'login'
   }
 ]
