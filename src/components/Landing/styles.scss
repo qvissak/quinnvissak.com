@@ -1,0 +1,34 @@
+@import 'App.scss';
+
+/* Desktop */
+/* index.js */
+.temporary-container {
+    padding: 0 5.938em;
+    // Subtract the height of the header and footer
+    min-height: calc(100vh - 5.875em - 4em);
+    line-height: calc(100vh - 5.875em * 2 - 4em);
+    text-align: center;
+    > :first-child { font-size: 3.5em; }
+}
+
+/* Tablet */
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .temporary-container {
+        padding: 0 1.250em;
+        // Subtract the height of the header and footer
+        min-height: calc(100vh - 5.813em - 5em);
+        text-align: center;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: $max-mobile) {
+    .temporary-container {
+        padding: 0 0.875em;
+        // Subtract the height of the header and footer
+        min-height: calc(100vh - 5.563em - 12.688em);
+        line-height: calc(100vh - 5.563em * 2 - 12.688em);
+        text-align: center;
+        > :first-child { font-size: 2.313em; }
+    }
+}
