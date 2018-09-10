@@ -1,6 +1,7 @@
 import React from 'react'
-import { apiFetch } from '../../utils'
-import { apiUri } from '../../config'
+// import { apiFetch } from '../../utils'
+// import { apiUri } from '../../config'
+import { recipes } from '../../config'
 
 import FoodCard from './FoodCard'
 
@@ -20,8 +21,9 @@ class Recipes extends React.Component {
   }
 
   async getRecipes () {
-    const response = await apiFetch(apiUri.recipes.pathname)
-    this.setState({ recipes: response.data })
+    // const response = await apiFetch(apiUri.recipes.pathname)
+    // this.setState({ recipes: response.data })
+    this.setState({ recipes: recipes.data })
   }
 
   render () {
