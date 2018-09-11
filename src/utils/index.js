@@ -1,6 +1,7 @@
 import url from 'url'
 
 export const host = process.env.REACT_APP_DIRECTUS_HOST
+const env = process.env.REACT_APP_ENVIRONMENT
 
 /**
  * Generic fetch to make api calls
@@ -10,7 +11,7 @@ export const host = process.env.REACT_APP_DIRECTUS_HOST
  * @param {object} query - example: {'query':'string'}
  * @param {object} args - headers
  */
-export function apiFetchGeneric (protocol, hostname, pathname, query, ...args) {
+export const apiFetchGeneric = (protocol, hostname, pathname, query, ...args) => {
   const uri = url.format({ protocol, hostname, pathname, query })
 
   return fetch(uri, ...args)
@@ -24,7 +25,7 @@ export function apiFetchGeneric (protocol, hostname, pathname, query, ...args) {
  * @param {*} query - example: {'query':'string'}
  * @param {*} args - headers
  */
-export function apiFetch (pathname, query, ...args) {
+export const apiFetch = (pathname, query, ...args) => {
   const path = url.format({ pathname, query })
 
   return fetch(path, ...args)
@@ -32,10 +33,14 @@ export function apiFetch (pathname, query, ...args) {
     .catch((error) => { throw error })
 }
 
-export function apiImageUrlGeneric (obj, imageurl) {
-  return obj.protocol + '//' + obj.hostname + imageurl
+export const apiImageUrlGeneric = (obj, imageurl) => {
+  return `${obj.protocol}//${obj.hostname}${imageurl}`
 }
 
-export function apiImageUrl (imageurl) {
-  return 'http://' + host + imageurl
+export const apiImageUrl = (imageurl) => {
+  return env === 'DEVELOPMENT' ? `http://${host}${imageurl}` : `/quinnvissak.com${imageurl}`
+}
+
+export const localImageUrl = (imageurl) => {
+  return env === 'DEVELOPMENT' ? imageurl : `/quinnvissak.com${imageurl}`
 }

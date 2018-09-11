@@ -1,4 +1,5 @@
 import React from 'react'
+import { localImageUrl } from '../../utils'
 
 import Recipes from './Recipes'
 
@@ -6,9 +7,11 @@ import './styles.css'
 
 class Food extends React.Component {
   render () {
+    const sushiImage = localImageUrl('/images/sushi.jpg')
+
     return <div className="food-container">
       <div className="food-header-container">
-        <img className="food-header-img" alt="sushi" src="/images/sushi.jpg" />
+        <img className="food-header-img" alt="sushi" src={sushiImage} />
         <div className="food-header-title">Food</div>
       </div>
       {/* browse by component */}

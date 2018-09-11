@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactTooltip from 'react-tooltip'
 import ReactDOMServer from 'react-dom/server'
+import { localImageUrl } from '../../utils'
 
 import './styles.css'
 
 class HeaderItem extends React.Component {
   render () {
     const { item } = this.props
+    const downCaretImage = localImageUrl('/icons/dcaret.svg')
 
     return item.name === 'about'
       ? <div className="headeritem-container">
@@ -19,7 +21,7 @@ class HeaderItem extends React.Component {
                 {nestedItem.text}
               </div>
             </a>
-          ))}>{item.text}<img className="headeritem-icon" alt="dcaret" src="/icons/dcaret.svg" /></a>
+          ))}>{item.text}<img className="headeritem-icon" alt="dcaret" src={downCaretImage} /></a>
       </div>
       : <div className="headeritem-container">
         <a className={item.text === '|' ? '' : 'headeritem-text'} href={item.link}>{item.text}</a>

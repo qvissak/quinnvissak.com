@@ -60,7 +60,7 @@ export const navigation = [
   {
     name: 'login',
     // link: 'http://quinnvissak.test:8080/login',
-    link: '/',
+    link: null,
     text: 'login'
   }
 ]
