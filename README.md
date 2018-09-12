@@ -51,6 +51,11 @@ git clone git@github.com:qvissak/quinnvissak.com.git
 cp .env.example .env
 ```
 
+### Give yourself permissions to execute build script
+```sh
+chmod +x ./build.sh
+```
+
 ### Install Dependencies
 ```sh
 cd quinnvissak.com/
