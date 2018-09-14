@@ -33,14 +33,10 @@ export const apiFetch = (pathname, query, ...args) => {
     .catch((error) => { throw error })
 }
 
-export const apiImageUrlGeneric = (obj, imageurl) => {
-  return `${obj.protocol}//${obj.hostname}${imageurl}`
-}
+export const apiImageUrlGeneric = (obj, imageurl) => `${obj.protocol}//${obj.hostname}${imageurl}`
 
-export const apiImageUrl = (imageurl) => {
-  return env === 'DEVELOPMENT' ? `http://${host}${imageurl}` : `/quinnvissak.com${imageurl}`
-}
+export const apiImageUrl = (imageurl) => env === 'DEVELOPMENT' ? `http://${host}${imageurl}` : `/quinnvissak.com${imageurl}`
 
-export const localImageUrl = (imageurl) => {
-  return env === 'DEVELOPMENT' ? imageurl : `/quinnvissak.com${imageurl}`
-}
+export const localImageUrl = (imageurl) => env === 'DEVELOPMENT' ? imageurl : `/quinnvissak.com${imageurl}`
+
+export const makeUniformURL = (path) => path.replace(/ /g, '-').toLowerCase()

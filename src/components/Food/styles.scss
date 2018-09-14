@@ -36,7 +36,7 @@
 .food-content-container-inner{
     grid-column-start: 2;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
     grid-gap: 1em;
     justify-items: center;
 }
@@ -48,6 +48,14 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
         transition-duration: .5s !important;
     }
+}
+/* RecipeDetails.js */
+.recipedetails-container {
+    padding: 0 5.938em 5.938em 5.938em;
+}
+.recipedetails-title {
+    font-size: 3em;
+    font-weight: bold;
 }
 
 /* Tablet */

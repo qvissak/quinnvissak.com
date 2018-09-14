@@ -1,7 +1,7 @@
 import React from 'react'
 // import { apiFetch } from '../../utils'
 // import { apiUri } from '../../config'
-import { recipes } from '../../config'
+import { recipes as response } from '../../config'
 
 import FoodCard from './FoodCard'
 
@@ -22,18 +22,14 @@ class Recipes extends React.Component {
 
   async getRecipes () {
     // const response = await apiFetch(apiUri.recipes.pathname)
-    // this.setState({ recipes: response.data })
-    this.setState({ recipes: recipes.data })
+    this.setState({ recipes: response.data })
   }
 
-  render () {
-    const recipes = this.state.recipes.map((recipe, i) => {
+  render = () =>
+    this.state.recipes.map((recipe, i) => {
       const classes = { card: 'foodcard-card', media: 'foodcard-media' }
       return <FoodCard key={i} classes={classes} recipe={recipe} />
     })
-
-    return recipes
-  }
 }
 
 export default Recipes

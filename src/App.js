@@ -6,6 +6,7 @@ import Education from './components/Education'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Keywords from './components/Keywords'
+import RecipeDetails from './components/Food/RecipeDetails'
 import Food from './components/Food'
 import Activities from './components/Activities'
 import NotFound from './components/NotFound'
@@ -33,6 +34,7 @@ const App = () =>
         <Route path='/quinnvissak.com/experience' component={Experience} />
         <Route path='/quinnvissak.com/projects' component={Projects} />
         <Route path='/quinnvissak.com/keywords' component={Keywords} />
+        <Route path='/quinnvissak.com/food/:recipe' component={RecipeDetails} />
         <Route path='/quinnvissak.com/food' component={Food} />
         <Route path='/quinnvissak.com/activities' component={Activities} />
         <Route component={NotFound} />
