@@ -19,13 +19,16 @@ class RecipeDetails extends React.Component {
 
     return <div className="recipedetails-container">
       <div className="recipedetails-title">{recipe.name}</div>
+      <hr />
       <img alt={recipe.name} src={recipeImage} />
       <div>
         <div>Ingredients</div>
+        <hr />
         <div dangerouslySetInnerHTML={{ __html: recipe.ingredients }}></div>
       </div>
       <div>
         <div>Directions:</div>
+        <hr />
         <div dangerouslySetInnerHTML={{ __html: recipe.directions }}></div>
       </div>
     </div>

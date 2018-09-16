@@ -1,35 +1,19 @@
 import React from 'react'
-// import { apiFetch } from '../../utils'
-// import { apiUri } from '../../config'
-import { recipes as response } from '../../config'
 
 import FoodCard from './FoodCard'
 
 import './styles.css'
 
 class Recipes extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      recipes: []
-    }
-  }
-
-  componentDidMount () {
-    this.getRecipes()
-  }
-
-  async getRecipes () {
-    // const response = await apiFetch(apiUri.recipes.pathname)
-    this.setState({ recipes: response.data })
-  }
-
-  render = () =>
-    this.state.recipes.map((recipe, i) => {
+  render () {
+    const recipes = this.props.recipes.map((recipe, i) => {
       const classes = { card: 'foodcard-card', media: 'foodcard-media' }
       return <FoodCard key={i} classes={classes} recipe={recipe} />
     })
+    return recipes.length > 0
+      ? recipes
+      : <div className="recipes-no-search-results">Sorry, no search results matching your criteria.</div>
+  }
 }
 
 export default Recipes

@@ -30,7 +30,6 @@
 .food-content-container {
     display: grid;
     grid-template-columns: 5.938em auto 5.938em;
-    padding-top: 0.25em;
     padding-bottom: 5.938em;
 }
 .food-content-container-inner{
@@ -38,7 +37,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
     grid-gap: 1em;
-    justify-items: center;
+    justify-items: left;
 }
 /* Recipes.js */
 .foodcard-card {
@@ -49,6 +48,10 @@
         transition-duration: .5s !important;
     }
 }
+.recipes-no-search-results {
+    padding-top: 2em;
+    font-size: 2em;
+}
 /* RecipeDetails.js */
 .recipedetails-container {
     padding: 0 5.938em 5.938em 5.938em;
@@ -56,6 +59,31 @@
 .recipedetails-title {
     font-size: 3em;
     font-weight: bold;
+}
+/* FoodAppBar.js */
+.food-app-bar-container {
+    padding-left: 5.938em;
+}
+.food-app-bar-header {
+    font-size: 2em;
+}
+.food-app-bar-tags {
+    display: flex;
+    padding-bottom: 1em;
+}
+.food-app-bar-buttons {
+    padding: 0 1em;
+    margin: 0 1em;
+    background-color: #d3d3d3;
+    border-radius: 10em;
+    cursor: pointer;
+    &:hover {
+        background-color: #e0e0e0;
+    }
+}
+.food-app-bar-buttons-image {
+    height: 0.75em;
+    width: 0.75em;
 }
 
 /* Tablet */
@@ -78,6 +106,15 @@
         grid-template-columns: auto auto;
         grid-gap: 1em;
     }
+    .recipes-no-search-results {
+        font-size: 1.5em;
+    }
+    .food-app-bar-container {
+        padding-left: 1.250em;
+    }
+    .food-app-bar-buttons {
+        margin: 0 0.75em;
+    }
 }
 
 /* Mobile */
@@ -99,5 +136,18 @@
     .food-content-container-inner{
         grid-template-columns: auto;
         grid-gap: 0.875em;
+    }
+    .recipes-no-search-results {
+        font-size: 0.875em;
+    }
+    .food-app-bar-container {
+        padding-left: 0.875em;
+    }
+    .food-app-bar-header {
+        font-size: 1.5em;
+    }
+    .food-app-bar-buttons {
+        font-size: 0.875em;
+        margin: 0 0.5em;
     }
 }
