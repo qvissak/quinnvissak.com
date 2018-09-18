@@ -69,11 +69,12 @@
 }
 .food-app-bar-tags {
     display: flex;
-    padding-bottom: 1em;
+    flex-wrap: wrap;
+    padding-bottom: 0.5em;
 }
 .food-app-bar-buttons {
     padding: 0 1em;
-    margin: 0 1em;
+    margin: 0 1em 0.75em 1em;
     background-color: #d3d3d3;
     border-radius: 10em;
     cursor: pointer;
@@ -113,7 +114,7 @@
         padding-left: 1.250em;
     }
     .food-app-bar-buttons {
-        margin: 0 0.75em;
+        margin: 0 0.75em 0.75em 0.75em;
     }
 }
 
@@ -148,6 +149,6 @@
     }
     .food-app-bar-buttons {
         font-size: 0.875em;
-        margin: 0 0.5em;
+        margin: 0 0.5em 0.5em 0.5em;
     }
 }
