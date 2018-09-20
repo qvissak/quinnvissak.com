@@ -1,6 +1,6 @@
 import React from 'react'
 import { recipes as response } from '../../config'
-import { apiImageUrl, makeUniformURL } from '../../utils'
+import { makeUniformURL } from '../../utils'
 
 import './styles.css'
 
@@ -15,21 +15,19 @@ class RecipeDetails extends React.Component {
 
   render () {
     const { recipe } = this.state
-    const recipeImage = apiImageUrl(recipe.image.data.url)
 
     return <div className="recipedetails-container">
       <div className="recipedetails-title">{recipe.name}</div>
-      <hr />
-      <img alt={recipe.name} src={recipeImage} />
-      <div>
-        <div>Ingredients</div>
-        <hr />
-        <div dangerouslySetInnerHTML={{ __html: recipe.ingredients }}></div>
-      </div>
-      <div>
-        <div>Directions:</div>
-        <hr />
-        <div dangerouslySetInnerHTML={{ __html: recipe.directions }}></div>
+      <div className="recipedetails-description">{recipe.description}</div>
+      <div className="recipedetails-content-container">
+        <div className="recipedetails-ingredients">
+          <div className="recipedetails-ingredients-text">Ingredients</div>
+          <div dangerouslySetInnerHTML={{ __html: recipe.ingredients }}></div>
+        </div>
+        <div className="recipedetails-directions">
+          <span className="recipedetails-directions-text">Directions</span>
+          <div dangerouslySetInnerHTML={{ __html: recipe.directions }}></div>
+        </div>
       </div>
     </div>
   }

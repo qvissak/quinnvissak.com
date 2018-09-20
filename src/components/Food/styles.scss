@@ -38,6 +38,7 @@
     grid-template-columns: repeat(auto-fit, minmax(345px, 0fr));
     grid-gap: 1em;
 }
+
 /* Recipes.js */
 .foodcard-card {
     border-radius: 4% !important;
@@ -51,6 +52,7 @@
     padding-top: 2em;
     font-size: 2em;
 }
+
 /* RecipeDetails.js */
 .recipedetails-container {
     padding: 0 5.938em 5.938em 5.938em;
@@ -59,7 +61,28 @@
     font-size: 3em;
     font-weight: bold;
 }
-/* FoodAppBar.js */
+.recipedetails-description {
+    font-size: 1.125em;
+    padding-bottom: 1em;
+}
+.recipedetails-content-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.recipedetails-ingredients {
+    grid-column: 1;
+}
+.recipedetails-directions {
+    grid-column: 2;
+}
+.recipedetails-ingredients-text,
+.recipedetails-directions-text {
+    font-size: 1.375em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* FilterBar.js */
 .food-app-bar-container {
     padding-left: 5.938em;
 }
@@ -88,6 +111,7 @@
 
 /* Tablet */
 @media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    /* index.js */
     .food-container {
         min-height: calc(100vh - 10.8em);
     }
@@ -106,9 +130,13 @@
         grid-template-columns: auto auto;
         grid-gap: 1em;
     }
+
+    /* Recipes.js */
     .recipes-no-search-results {
         font-size: 1.5em;
     }
+
+    /* FilterBar.js */
     .food-app-bar-container {
         padding-left: 1.250em;
     }
@@ -119,6 +147,7 @@
 
 /* Mobile */
 @media screen and (max-width: $max-mobile) {
+    /* index.js */
     .food-container {
         min-height: calc(100vh - 18.2em);
     }
@@ -137,9 +166,13 @@
         grid-template-columns: auto;
         grid-gap: 0.875em;
     }
+
+    /* Recipes.js */
     .recipes-no-search-results {
         font-size: 0.875em;
     }
+
+    /* FilterBar.js */
     .food-app-bar-container {
         padding-left: 0.875em;
     }
