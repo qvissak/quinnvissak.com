@@ -1,7 +1,7 @@
 import React from 'react'
 import { localImageUrl } from '../../utils'
 
-class FoodAppBar extends React.Component {
+class FilterBar extends React.Component {
   render () {
     const { tags, filterByTags, filter } = this.props
     const removeImage = localImageUrl('/icons/x.svg')
@@ -18,4 +18,4 @@ class FoodAppBar extends React.Component {
   }
 }
 
-export default FoodAppBar
+export default FilterBar

@@ -2,7 +2,7 @@ import React from 'react'
 import { localImageUrl } from '../../utils'
 import { recipes as response } from '../../config'
 
-import FoodAppBar from './FoodAppBar'
+import FilterBar from './FilterBar'
 import Recipes from './Recipes'
 
 import './styles.css'
@@ -66,7 +66,7 @@ class Food extends React.Component {
           <b>Filter</b>
           <span style={{ color: '#696969' }}> - {recipes.length} {recipes.length === 1 ? 'item' : 'items'}</span>
         </div>
-        <FoodAppBar tags={this.state.tags} filterByTags={this.state.filterByTags} filter={this.filter} />
+        <FilterBar tags={this.state.tags} filterByTags={this.state.filterByTags} filter={this.filter} />
       </div>
       {/* recipe components */}
       <div className="food-content-container">
