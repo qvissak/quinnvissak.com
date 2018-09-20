@@ -24,7 +24,7 @@ class FoodCard extends React.Component {
     const { classes, recipe: { name, description, image } } = this.props
     const uri = apiImageUrl(image.data.url)
 
-    return <Card className={classes.card}>
+    return <Card className={classes.card} style={{ maxWidth: 'initial' }}>
       <Link to={`/quinnvissak.com/food/${makeUniformURL(name)}`} style={{ textDecoration: 'none' }}>
         <CardMedia className={classes.media} image={uri} />
         <CardContent className={classes.content}>
