@@ -29,13 +29,8 @@ Project set up shown for MacOS. Please contact the lead developer or update the 
 - [Node](https://nodejs.org/en/download/)
 - [Php](http://php.net/manual/en/install.php)
 ```sh
-brew install composer
-brew install git
-brew install mysql
-brew install mysql-server
-brew install nginx
-brew install node
-brew install php72
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew bundle
 ```
 
 ### Add SSH Key to your GitHub Account
