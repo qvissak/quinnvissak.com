@@ -55,6 +55,7 @@
 
 /* RecipeDetails.js */
 .recipedetails-container {
+    min-height: calc(100vh - 9.90em - 5.938em);
     padding: 0 5.938em 5.938em 5.938em;
 }
 .recipedetails-title {
@@ -170,6 +171,17 @@
     /* Recipes.js */
     .recipes-no-search-results {
         font-size: 0.875em;
+    }
+
+    /* RecipeDetails.js */
+    .recipedetails-content-container {
+        grid-template-columns: auto;
+    }
+    .recipedetails-ingredients {
+        grid-column: 1;
+    }
+    .recipedetails-directions {
+        grid-column: 1;
     }
 
     /* FilterBar.js */
