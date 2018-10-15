@@ -1,0 +1,7 @@
+brew 'git'
+brew 'composer'
+brew 'mysql'
+brew 'mysql-server'
+brew 'nginx'
+brew 'node'
+brew 'php72'
