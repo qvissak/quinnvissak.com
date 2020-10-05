@@ -20,13 +20,30 @@ const styles = {
 }
 
 class FoodCard extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      uri: ""
+    }
+  }
+
+  componentDidMount () {
+    this.getUri()
+  }
+
+  async getUri() {
+    this.setState({
+      uri: await apiImageUrl(this.props.recipe.image)
+    })
+  }
+
   render () {
-    const { classes, recipe: { name, description, image } } = this.props
-    const uri = apiImageUrl(image.data.url)
+    const { classes, recipe: { name, description } } = this.props
 
     return <Card className={classes.card} style={{ maxWidth: 'initial' }}>
       <Link to={`/quinnvissak.com/food/${makeUniformURL(name)}`} style={{ textDecoration: 'none' }}>
-        <CardMedia className={classes.media} image={uri} />
+        <CardMedia className={classes.media} image={this.state.uri} />
         <CardContent className={classes.content}>
           <Typography gutterBottom variant="headline" component="h2">{name}</Typography>
           <Typography component="p">{description}</Typography>

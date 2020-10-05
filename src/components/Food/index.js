@@ -26,8 +26,7 @@ class Food extends React.Component {
     this.setState({
       recipes: response.data,
       tags: response.data.reduce((arr, recipe) => {
-        const tags = recipe.tags.split(',')
-        tags.forEach(tag => {
+        recipe.tags.forEach(tag => {
           if (!arr.includes(tag)) {
             arr.push(tag)
           }

@@ -24,7 +24,7 @@ class Footer extends React.Component {
         code &rarr;
         {this.makeIcon('https://www.github.com/qvissak/quinnvissak.com', 'github', '/icons/github.svg')}
       </div>
-      <div className="footer-item">Quinn Vissak &copy; 2018</div>
+      <div className="footer-item">Quinn Vissak &copy; 2020</div>
       <div className="footer-item">
         <a onClick={() => this.sendEmail()}>
           <img className="footer-icons" alt="email" src={emailIcon} />
