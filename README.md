@@ -29,6 +29,10 @@ Before working on this project, you should be familiar with the following protoc
 - [Node](https://nodejs.org/en/download/)
 - [Python3](https://www.python.org/downloads/)
 
+```bash
+pip3 install requests
+```
+
 ### Initial Directus Configuration
 
 Follow the set up guide [here](https://docs.directus.io/installation/docker.html).
@@ -37,6 +41,7 @@ Follow the set up guide [here](https://docs.directus.io/installation/docker.html
 
 ```bash
 docker-compose up -d
+cat directussqldump.sql | docker exec -i quinnvissakcom_mysql_1 mysql -u directus -pdirectus directus
 ```
 
 Navigate to [login page](http://localhost:8080/admin/#/login) in your browser to see the CMS. Log in with `email@example.com` and `d1r3ctu5`.
@@ -46,4 +51,12 @@ Navigate to [login page](http://localhost:8080/admin/#/login) in your browser to
 ```bash
 npm predeploy
 npm deploy
+```
+
+## Database
+
+### Backup MySQL
+
+```bash
+docker exec -it quinnvissakcom_mysql_1 mysqldump -u directus -pdirectus directus > directussqldump.sql
 ```

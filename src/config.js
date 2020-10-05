@@ -1,4 +1,4 @@
-export { recipes } from './build.js'
+export { recipes } from './build.js' // recipes object will be auto-generated from build.sh
 
 export const colors = {
   white: '#d7e2dc'
@@ -61,7 +61,6 @@ export const navigation = [
   },
   {
     name: 'login',
-    // link: 'http://quinnvissak.test:8080/login',
     link: null,
     text: 'login'
   }

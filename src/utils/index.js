@@ -11,12 +11,9 @@ const env = process.env.REACT_APP_ENVIRONMENT
  * @param {object} query - example: {'query':'string'}
  * @param {object} args - headers
  */
-export const apiFetchGeneric = (protocol, hostname, pathname, query, ...args) => {
+export const apiFetchGeneric = async (protocol, hostname, pathname, query, ...args) => {
   const uri = url.format({ protocol, hostname, pathname, query })
-
-  return fetch(uri, ...args)
-    .then((response) => response.json())
-    .catch((error) => { throw error })
+  return (await fetch(uri, ...args)).json()
 }
 
 /**
@@ -25,17 +22,17 @@ export const apiFetchGeneric = (protocol, hostname, pathname, query, ...args) =>
  * @param {*} query - example: {'query':'string'}
  * @param {*} args - headers
  */
-export const apiFetch = (pathname, query, ...args) => {
+export const apiFetch = async (pathname, query, ...args) => {
   const path = url.format({ pathname, query })
-
-  return fetch(path, ...args)
-    .then(response => response.json())
-    .catch((error) => { throw error })
+  return (await fetch(path, ...args)).json()
 }
 
-export const apiImageUrlGeneric = (obj, imageurl) => `${obj.protocol}//${obj.hostname}${imageurl}`
-
-export const apiImageUrl = (imageurl) => env === 'DEVELOPMENT' ? `http://${host}${imageurl}` : `/quinnvissak.com${imageurl}`
+export const apiImageUrl = async (imageId) => {
+  // TODO: remove hard-coded bearer token
+  const response = await apiFetch(`http://localhost:8080/_/files/${imageId}`, null, { 'headers': {'Authorization': 'Bearer 1VeakrA1jBflEI4PPDY9qXGd'}})
+  const imageUrl = response['data']['data']['url']
+  return env === 'DEVELOPMENT' ? `http://${host}${imageUrl}` : `/quinnvissak.com${imageUrl}`
+}
 
 export const localImageUrl = (imageurl) => env === 'DEVELOPMENT' ? imageurl : `/quinnvissak.com${imageurl}`
 
